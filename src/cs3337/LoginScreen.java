@@ -20,11 +20,12 @@ import javax.swing.Box;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 
-public class LoginScreen {
+public class LoginScreen implements ActionListener{
 
 	private JFrame frame;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -66,37 +67,55 @@ public class LoginScreen {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		JLabel lblNewLabel = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/rsz_senseorlogo.jpg")).getImage();
+		lblNewLabel.setIcon(new ImageIcon(img));
+		lblNewLabel.setBounds(117, 20, 206, 83);
+		
+		JLabel lblNewLabel_1 = new JLabel("Username");
+		lblNewLabel_1.setBounds(73, 127, 65, 14);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Password");
+		lblNewLabel_1_1.setBounds(73, 165, 89, 14);
+		
+		textField = new JTextField();
+		textField.setBounds(182, 124, 141, 20);
+		textField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(182, 162, 141, 20);
+		
+		btnNewButton = new JButton("Enter");
+		btnNewButton.setBounds(234, 201, 89, 23);
+		btnNewButton.addActionListener(this);
+		
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/rsz_senseorlogo.jpg")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(117, 20, 206, 83);
 		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Username");
-		lblNewLabel_1.setBounds(73, 127, 65, 14);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("Password");
-		lblNewLabel_1_1.setBounds(73, 165, 89, 14);
 		frame.getContentPane().add(lblNewLabel_1_1);
-		
-		textField = new JTextField();
-		textField.setBounds(182, 124, 141, 20);
 		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(182, 162, 141, 20);
 		frame.getContentPane().add(passwordField);
-		
-		JButton btnNewButton = new JButton("Enter");
-		btnNewButton.setBounds(234, 201, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		Authentication authen = new Authentication();
+		if(authen.Authenticate(textField.getText(), passwordField.getPassword().toString())) {
+//			Main mainwin = new Main();
+//			mainwin.CreateMainScreen();
+			System.out.println("Pressed the submit button. This is the user: " + textField.getText()
+			+ " This is the password: " + passwordField.getPassword().toString());
+		}
+	}
+	
+	
 }

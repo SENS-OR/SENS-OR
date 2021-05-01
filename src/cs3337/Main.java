@@ -18,7 +18,23 @@ public class Main {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Main window = new Main();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+
+	/**
+	 * Create the application.
+	 */
+	public void CreateMainScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -30,10 +46,7 @@ public class Main {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public Main() {
 		initialize();
 	}
