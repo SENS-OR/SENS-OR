@@ -29,7 +29,23 @@ public class LoginScreen {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					LoginScreen window = new LoginScreen();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+
+	/**
+	 * Create the application.
+	 */
+	public void CreateLoginScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -41,10 +57,7 @@ public class LoginScreen {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public LoginScreen() {
 		initialize();
 	}
