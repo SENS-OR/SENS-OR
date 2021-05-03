@@ -7,9 +7,6 @@ public class StartApp {
 		// TODO Auto-generated method stub
 		//call the class for the login screen and after the logging in call the main.java class
 		LoginScreen login = new LoginScreen();
-		
-		login.CreateLoginScreen();
-		
 	}
 
 }

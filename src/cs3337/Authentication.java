@@ -21,10 +21,15 @@ public class Authentication {
 	
 	//public methods
 	public boolean Authenticate(String user, String pw) {
+		System.out.println("Authenticate is being called");
+		if(users.containsKey(user)) {
+		}
 		
-		if(users.get(user) == pw) {
+		if(users.get(user).contentEquals(pw)) {
+			System.out.println("returning true");
 			return true;
 		}
+		System.out.println("returning false");
 		return false;
 	}
 }

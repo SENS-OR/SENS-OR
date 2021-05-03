@@ -1,23 +1,16 @@
 package cs3337;
 
-import java.awt.EventQueue;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-import javax.swing.JFrame;
-import java.awt.Color;
-import javax.swing.JInternalFrame;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Box;
-import javax.swing.JButton;
-
-public class Main {
+public class Main implements ActionListener{
 
 	private JFrame frame;
 
 	/**
 	 * Launch the application.
-	 */
+	 
 //	public static void main(String[] args) {
 //		EventQueue.invokeLater(new Runnable() {
 //			public void run() {
@@ -30,10 +23,10 @@ public class Main {
 //			}
 //		});
 //	}
-
+*/
 	/**
 	 * Create the application.
-	 */
+	 
 	public void CreateMainScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,6 +39,8 @@ public class Main {
 			}
 		});
 	}
+*/	
+	
 	
 	public Main() {
 		initialize();
@@ -64,14 +59,19 @@ public class Main {
 		panel.setBounds(81, 11, 258, 182);
 		frame.getContentPane().add(panel);
 		
-		JButton btnNewButton = new JButton("Take Screenshot");
-		btnNewButton.setBounds(81, 214, 134, 23);
-		frame.getContentPane().add(btnNewButton);
+		JButton btnScreenShot = new JButton("Take Screenshot");
+		btnScreenShot.setBounds(81, 214, 134, 23);
+		frame.getContentPane().add(btnScreenShot);
 		
-		JButton btnNewButton_1 = new JButton("Exit program");
-		btnNewButton_1.setBounds(232, 214, 107, 23);
-		frame.getContentPane().add(btnNewButton_1);
+		JButton btnExit = new JButton("Exit program");
+		btnExit.setBounds(232, 214, 107, 23);
+		
+		frame.getContentPane().add(btnExit);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
 	}
 }
