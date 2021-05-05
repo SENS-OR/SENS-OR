@@ -10,6 +10,7 @@ public class LoginScreen implements ActionListener{
 	private JTextField textField;
 	private JPasswordField passwordField;
 	private JButton btnSubmit;
+	private JLabel lblStatus;
 	private Authentication authenticate = new Authentication();
 
 	/**
@@ -63,6 +64,9 @@ public class LoginScreen implements ActionListener{
 		JLabel lblNewLabel_1 = new JLabel("Username");
 		lblNewLabel_1.setBounds(73, 127, 65, 14);
 		
+		lblStatus = new JLabel("Status");
+		lblStatus.setBounds(73, 207, 90, 14);
+		
 		JLabel lblNewLabel_1_1 = new JLabel("Password");
 		lblNewLabel_1_1.setBounds(73, 165, 89, 14);
 		
@@ -88,6 +92,7 @@ public class LoginScreen implements ActionListener{
 		frame.add(lblNewLabel);
 		frame.add(lblNewLabel_1);
 		frame.add(lblNewLabel_1_1);
+		frame.add(lblStatus);
 		frame.add(textField);
 		frame.add(passwordField);
 		frame.add(btnSubmit);
@@ -106,9 +111,13 @@ public class LoginScreen implements ActionListener{
 	
 	private void AuthenticateUser() {
 		if(authenticate.Authenticate(textField.getText(),String.valueOf(passwordField.getPassword()))) {
-			System.out.println("Access granted");
+			lblStatus.setText("Access Granted");
+			
 			Main main = new Main();
 			frame.setVisible(false);
+		}
+		else {
+			lblStatus.setText("Access Denied");
 		}
 	}
 }

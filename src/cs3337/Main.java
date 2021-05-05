@@ -1,45 +1,29 @@
 package cs3337;
 
+import java.lang.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import javax.imageio.ImageIO;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfRect;
+import org.opencv.core.Point;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
+import org.opencv.objdetect.CascadeClassifier;
+import org.opencv.videoio.VideoCapture;
 
 public class Main implements ActionListener{
 
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Main window = new Main();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-*/
-	/**
-	 * Create the application.
-	 
-	public void CreateMainScreen() {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Main window = new Main();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-*/	
+	//System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	
+	private JFrame frame;	
 	
 	
 	public Main() {
