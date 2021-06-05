@@ -114,6 +114,7 @@ public class LoginScreen implements ActionListener{
 			lblStatus.setText("Access Granted");
 			
 			Main main = new Main();
+			main.GetFrame().setVisible(true);
 			frame.setVisible(false);
 		}
 		else {
